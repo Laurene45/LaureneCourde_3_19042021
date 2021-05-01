@@ -1,0 +1,109 @@
+/* pages des menus restaurants */
+/* bouton previous*/
+.return{
+    position: absolute;
+    top: 35px;
+    left: 5%;
+    z-index: 6;
+    background-color:$white;
+    border: 0;
+    cursor: pointer;
+}
+
+.fas{
+    font-size: 16px;
+}
+
+/*image dans le header*/
+header img{
+    height: 235px;
+    object-fit: cover;
+    width: 100%;
+
+}
+
+/*détails des menus*/
+.menus{
+    width: 100%;
+    background-color: $background;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    margin-top: -50px;
+    border-radius: 35px 35px 0 0;
+    position:relative;
+
+}
+
+.menus__title{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.menus__title h1{
+    font-family: "Shrikhand";
+    font-weight: 400;
+    display: inline-flex;
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-top: 0px;
+}
+
+h2 span {
+    padding-bottom: 5px;
+    border-bottom: 3px solid $tertiary-color;
+}
+
+.fa-heart{
+    font-size: 30px;
+    position:relative;
+    right: 60%;
+    margin-top: 20px;
+}
+
+/*entrées, plats et desserts*/
+.entrees, .plats, .desserts {
+    padding-bottom: 15px;
+    & a{
+        background-color:$white;
+        margin-bottom: 15px;
+        height: 80px;
+    }
+    & h3{
+        font-size: 17px;
+    }
+    & p{
+        color:$black;
+        font-size: 13px;
+        padding-bottom:0;
+    }
+}
+
+
+.choice{
+    display: flex;
+    width: 93%;
+    border-radius: 10px;
+    margin: auto;
+
+}
+.name{
+    width:100%;
+    padding: 10px;
+}
+
+
+.price {
+    padding-top: 30px;
+    padding-right:25px;
+    font-weight: bold;
+    & p{
+        font-size:15px;
+    }
+}
+
+
+.gradient{
+    display: flex;
+    margin:auto;
+}

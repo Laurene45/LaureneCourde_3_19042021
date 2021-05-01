@@ -1,1 +1,77 @@
-/* No CSS *//*# sourceMappingURL=mixins.css.map */
+
+/*base*/
+/* les liens a */
+@mixin link{
+  color: $black;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* logo */
+@mixin logo{
+  font-family: "Shrikhand";
+  padding: 20px 0 10px 0;
+  width: 100%;
+  font-size: 35px;
+  text-align: center;
+  color: $black;
+}
+
+
+/*restaurants*/
+/* cards span*/
+@mixin cards-span{
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 15px;
+  background-color: $tertiary-color;
+  color: #2c9c81;
+  padding: 5px 10px;
+}
+
+@mixin photos{
+  background-color: $white;
+  border-radius: 15px;
+  margin: 10px;
+  padding-bottom: 10px;
+  height: 250px;
+  box-shadow: 0px 4px 5px 0px #cbcbcb;
+}
+
+@mixin heart{
+  font-size: 30px;
+  position:relative;
+  margin-left: 80%;
+  vertical-align: middle;
+  bottom: 30%;
+}
+
+
+
+
+
+
+
+
+
+/*tablette et pc : responsives*/
+@mixin tablet {
+    @media screen and (min-width: map-get($breakpoints, tablet-min)){
+      @content;
+    }
+} 
+
+
+@mixin laptop {
+   @media screen and (min-width: map-get($breakpoints, laptop-min)){
+      @content;
+    }
+} 
+
+
+@mixin laptop-xxl {
+  @media screen and (min-width: map-get($breakpoints, laptop-xxl)){
+     @content;
+   }
+} 

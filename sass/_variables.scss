@@ -1,12 +1,24 @@
-/******color******/
+/*colors*/
 
-$color-primaire: #9356dc;
-$color-secondaire: #ff79da;
-$color-tertaire: #99e2d0;
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$tertiary-color: #99e2d0;
 $color-grey: #eaeaea;
 $background: #f6f6f6;
 $white: white;
 $dark-grey: #7e7e7e;
-$grey: #f2f2f2;
 $black: black;
 $darkbackground: #353535;
+
+
+/*breakpoints*/
+
+$breakpoints: (
+    tablet-min: 475px,
+    laptop-min: 1024px,
+    laptop-xxl: 2560px,
+);
+
+
+
+

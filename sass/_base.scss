@@ -1,0 +1,42 @@
+/*structure css*/
+body {
+    margin: 0;
+    font-family: "Roboto";
+    @include laptop{
+        width: 1380px;
+        margin: auto;
+    }
+    @include laptop-xxl{
+        width: 1680px;
+        margin: auto;
+    }
+}
+
+.logo{
+    @include logo;
+}
+  
+a {
+    @include link;
+}
+
+h1{
+    padding: 20px 40px 0 40px;
+}
+
+h2 {
+    padding-left: 10px;
+    @include tablet {
+        text-align:center;
+    }
+    
+}
+  
+h3, p {
+    margin: 0 0 5px 0;
+}
+
+p{
+    padding-bottom: 30px;
+    color: $dark-grey;
+}
