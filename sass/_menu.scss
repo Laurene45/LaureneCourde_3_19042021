@@ -1,25 +1,22 @@
 /* pages des menus restaurants */
 /* bouton previous*/
+
+header{
+    position:relative;
+}
 .return{
-    position: absolute;
-    top: 35px;
-    left: 5%;
-    z-index: 6;
-    background-color:$white;
-    border: 0;
-    cursor: pointer;
+   @include previous;
 }
 
 .fas{
     font-size: 16px;
 }
 
-/*image dans le header*/
+/*image*/
 header img{
     height: 235px;
     object-fit: cover;
     width: 100%;
-
 }
 
 /*détails des menus*/
@@ -31,39 +28,34 @@ header img{
     margin-top: -50px;
     border-radius: 35px 35px 0 0;
     position:relative;
-
 }
 
-.menus__title{
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.menus__title h1{
+.text__description h1{
     font-family: "Shrikhand";
     font-weight: 400;
-    display: inline-flex;
-    vertical-align: middle;
-    padding-left: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
     padding-top: 0px;
 }
 
 h2 span {
-    padding-bottom: 5px;
-    border-bottom: 3px solid $tertiary-color;
+    border-bottom:3px solid $tertiary-color;
+    display: block;
+    width:50px;
+    margin-bottom: 15px;
 }
 
-.fa-heart{
-    font-size: 30px;
-    position:relative;
-    right: 60%;
-    margin-top: 20px;
+.icon{
+    padding-top:20px;
 }
 
 /*entrées, plats et desserts*/
 .entrees, .plats, .desserts {
     padding-bottom: 15px;
+    &__titre{
+        color:$dark-grey;
+        font-size: 16px;
+    }
     & a{
         background-color:$white;
         margin-bottom: 15px;
@@ -71,27 +63,38 @@ h2 span {
     }
     & h3{
         font-size: 17px;
+        @include laptop {
+            font-size: 22px;
+        }
+        @include laptop-xxl{
+            font-size: 25px;
+        }
     }
     & p{
         color:$black;
         font-size: 13px;
         padding-bottom:0;
+        @include laptop {
+            font-size: 19px;
+        }
+        @include laptop-xxl{
+            font-size: 22px;
+        }
     }
 }
-
 
 .choice{
     display: flex;
     width: 93%;
     border-radius: 10px;
     margin: auto;
+    box-shadow: 0px 4px 5px 0px #cbcbcb;
 
 }
 .name{
     width:100%;
     padding: 10px;
 }
-
 
 .price {
     padding-top: 30px;
@@ -102,8 +105,10 @@ h2 span {
     }
 }
 
-
 .gradient{
     display: flex;
     margin:auto;
+    @include laptop {
+        font-size: 17px;
+    }
 }

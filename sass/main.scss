@@ -5,7 +5,6 @@
 @import "./base";
 @import "./menu";
 
-
 /* header */
 header {
     display: flex;
@@ -63,14 +62,7 @@ input {
 
 /*bouton rose*/
 button{
-    font-size: 14px;
-    background: linear-gradient($secondary-color, $primary-color);
-    padding: 15px;
-    color:$white;
-    border: 0px;
-    border-radius: 25px;
-    box-shadow: 0px 3px 4px 2px #d1d1d1;
-    cursor: pointer;
+    @include button-rose;
 }
 
 /*fonctionnement*/
@@ -84,7 +76,7 @@ button{
     }
     @include laptop{
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 90%;
         padding-bottom: 30px;
     }
@@ -116,8 +108,7 @@ button{
         & .fas {
             margin-right: 5%;
             color: #909090;
-        }
-        
+        }  
     }
 }
 
@@ -148,7 +139,12 @@ button{
         }
     }
     &__photos{
-        @include photos;
+        background-color: $white;
+        border-radius: 15px;
+        margin: 10px;
+        padding-bottom: 10px;
+        height: 250px;
+        box-shadow: 0px 4px 5px 0px #cbcbcb;
         &--large{
             height: 190px;
             width: 100%;
@@ -176,26 +172,29 @@ button{
     }
 }
 
-.iconheart{
-    @include heart;
-    @include laptop{
-        margin-left: 90%;
-    }
-}
 
 .text{
     padding-top: 5px;
     padding-left: 10px;
     & p{
         color: $black;
-        font-size: 15px;
     }
+    &__description{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.fa-heart{
+    height: 60px;
+    width: 45px;
+    font-size: 30px;
 }
 
 h3 {
     font-size: 17px;
 }
-
 
 /*footer*/
 footer{
@@ -238,7 +237,6 @@ footer{
 .link{
     padding-left: 7px;
 }
-
 
 /* Responsives inclus via les mixins */
 

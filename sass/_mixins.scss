@@ -1,10 +1,30 @@
-
-/*base*/
 /* les liens a */
 @mixin link{
   color: $black;
   text-decoration: none;
   list-style: none;
+}
+
+/* bouton previous*/
+@mixin previous{
+  position: absolute;
+  left:20px;
+  top: 35px;
+  background-color:$white;
+  border: 0;
+  cursor: pointer;
+}
+
+/*bouton rose */
+@mixin button-rose{
+  font-size: 14px;
+  background: linear-gradient($secondary-color, $primary-color);
+  padding: 15px;
+  color:$white;
+  border: 0px;
+  border-radius: 25px;
+  box-shadow: 0px 3px 4px 2px #d1d1d1;
+  cursor: pointer;
 }
 
 /* logo */
@@ -17,9 +37,7 @@
   color: $black;
 }
 
-
 /*restaurants*/
-/* cards span*/
 @mixin cards-span{
   position: absolute;
   z-index: 1;
@@ -30,32 +48,9 @@
   padding: 5px 10px;
 }
 
-@mixin photos{
-  background-color: $white;
-  border-radius: 15px;
-  margin: 10px;
-  padding-bottom: 10px;
-  height: 250px;
-  box-shadow: 0px 4px 5px 0px #cbcbcb;
-}
-
-@mixin heart{
-  font-size: 30px;
-  position:relative;
-  margin-left: 80%;
-  vertical-align: middle;
-  bottom: 30%;
-}
-
-
-
-
-
-
-
-
-
+/*******************************/
 /*tablette et pc : responsives*/
+
 @mixin tablet {
     @media screen and (min-width: map-get($breakpoints, tablet-min)){
       @content;

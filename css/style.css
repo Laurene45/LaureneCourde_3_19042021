@@ -2,11 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
 /*colors*/
 /*breakpoints*/
-/*base*/
 /* les liens a */
+/* bouton previous*/
+/*bouton rose */
 /* logo */
 /*restaurants*/
-/* cards span*/
+/*******************************/
 /*tablette et pc : responsives*/
 /*structure css*/
 body {
@@ -15,13 +16,13 @@ body {
 }
 @media screen and (min-width: 1024px) {
   body {
-    width: 1380px;
+    max-width: 900px;
     margin: auto;
   }
 }
 @media screen and (min-width: 2560px) {
   body {
-    width: 1680px;
+    max-width: 900px;
     margin: auto;
   }
 }
@@ -59,17 +60,21 @@ h3, p {
 }
 
 p {
+  font-size: 15px;
   padding-bottom: 30px;
   color: #7e7e7e;
 }
 
 /* pages des menus restaurants */
 /* bouton previous*/
+header {
+  position: relative;
+}
+
 .return {
   position: absolute;
+  left: 20px;
   top: 35px;
-  left: 5%;
-  z-index: 6;
   background-color: white;
   border: 0;
   cursor: pointer;
@@ -79,7 +84,7 @@ p {
   font-size: 16px;
 }
 
-/*image dans le header*/
+/*image*/
 header img {
   height: 235px;
   object-fit: cover;
@@ -97,35 +102,32 @@ header img {
   position: relative;
 }
 
-.menus__title {
-  display: flex;
-  justify-content: space-between;
-}
-
-.menus__title h1 {
+.text__description h1 {
   font-family: "Shrikhand";
   font-weight: 400;
-  display: inline-flex;
-  vertical-align: middle;
-  padding-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
   padding-top: 0px;
 }
 
 h2 span {
-  padding-bottom: 5px;
   border-bottom: 3px solid #99e2d0;
+  display: block;
+  width: 50px;
+  margin-bottom: 15px;
 }
 
-.fa-heart {
-  font-size: 30px;
-  position: relative;
-  right: 60%;
-  margin-top: 20px;
+.icon {
+  padding-top: 20px;
 }
 
 /*entrées, plats et desserts*/
 .entrees, .plats, .desserts {
   padding-bottom: 15px;
+}
+.entrees__titre, .plats__titre, .desserts__titre {
+  color: #7e7e7e;
+  font-size: 16px;
 }
 .entrees a, .plats a, .desserts a {
   background-color: white;
@@ -135,10 +137,30 @@ h2 span {
 .entrees h3, .plats h3, .desserts h3 {
   font-size: 17px;
 }
+@media screen and (min-width: 1024px) {
+  .entrees h3, .plats h3, .desserts h3 {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .entrees h3, .plats h3, .desserts h3 {
+    font-size: 25px;
+  }
+}
 .entrees p, .plats p, .desserts p {
   color: black;
   font-size: 13px;
   padding-bottom: 0;
+}
+@media screen and (min-width: 1024px) {
+  .entrees p, .plats p, .desserts p {
+    font-size: 19px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .entrees p, .plats p, .desserts p {
+    font-size: 22px;
+  }
 }
 
 .choice {
@@ -146,6 +168,7 @@ h2 span {
   width: 93%;
   border-radius: 10px;
   margin: auto;
+  box-shadow: 0px 4px 5px 0px #cbcbcb;
 }
 
 .name {
@@ -165,6 +188,11 @@ h2 span {
 .gradient {
   display: flex;
   margin: auto;
+}
+@media screen and (min-width: 1024px) {
+  .gradient {
+    font-size: 17px;
+  }
 }
 
 /* header */
@@ -255,7 +283,7 @@ button {
 @media screen and (min-width: 1024px) {
   .steps {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 90%;
     padding-bottom: 30px;
   }
@@ -369,26 +397,23 @@ button {
   padding: 5px 10px;
 }
 
-.iconheart {
-  font-size: 30px;
-  position: relative;
-  margin-left: 80%;
-  vertical-align: middle;
-  bottom: 30%;
-}
-@media screen and (min-width: 1024px) {
-  .iconheart {
-    margin-left: 90%;
-  }
-}
-
 .text {
   padding-top: 5px;
   padding-left: 10px;
 }
 .text p {
   color: black;
-  font-size: 15px;
+}
+.text__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-heart {
+  height: 60px;
+  width: 45px;
+  font-size: 30px;
 }
 
 h3 {

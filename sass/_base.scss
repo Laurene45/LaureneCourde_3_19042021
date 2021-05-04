@@ -3,11 +3,11 @@ body {
     margin: 0;
     font-family: "Roboto";
     @include laptop{
-        width: 1380px;
+        max-width: 900px;
         margin: auto;
     }
     @include laptop-xxl{
-        width: 1680px;
+        max-width: 900px;
         margin: auto;
     }
 }
@@ -29,7 +29,6 @@ h2 {
     @include tablet {
         text-align:center;
     }
-    
 }
   
 h3, p {
@@ -37,6 +36,8 @@ h3, p {
 }
 
 p{
+    font-size:15px;
     padding-bottom: 30px;
     color: $dark-grey;
 }
+
