@@ -13,7 +13,12 @@ body {
 }
 
 .logo{
-    @include logo;
+    font-family: "Shrikhand";
+    padding: 20px 0 10px 0;
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    color: $black;
 }
   
 a {
@@ -29,6 +34,10 @@ h2 {
     @include tablet {
         text-align:center;
     }
+}
+
+h3 {
+    font-size: 17px;
 }
   
 h3, p {

@@ -27,16 +27,6 @@
   cursor: pointer;
 }
 
-/* logo */
-@mixin logo{
-  font-family: "Shrikhand";
-  padding: 20px 0 10px 0;
-  width: 100%;
-  font-size: 35px;
-  text-align: center;
-  color: $black;
-}
-
 /*restaurants*/
 @mixin cards-span{
   position: absolute;

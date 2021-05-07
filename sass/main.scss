@@ -65,7 +65,8 @@ button{
     @include button-rose;
     &:hover{
         background: linear-gradient($secondary-color, $primary-color);
-        opacity: 0.7;
+        opacity: 0.8;
+        transform:scale(1.02);
     }
 }
 
@@ -191,34 +192,39 @@ button{
     }
 }
 
+/*coeurs*/
 .iconheart{
-    display: inline-flex;
-    margin-left: 15%;
-    vertical-align: middle;
     position:relative;
 }
-
-.fa-heart{
+.far{
     height: 60px;
-    width: 45px;
-    font-size: 30px;
+    width: 50px;
+    font-size: 30px; 
 }
 
-.fa-heart::before, .color{
+.heart--nb{
     position:absolute;
+    opacity: 1;  
 }
 
-.fa-heart:hover::before{
-    font-weight: bold;
-    background: linear-gradient(30deg, #9356dc, #ff79da);
+.heart--nb:hover{
+    opacity:0;
+}
+
+.heart--color{
+    opacity: 0;
+}
+
+.heart--color:hover{
+    opacity: 1;
+    background: linear-gradient(70deg,$secondary-color,$primary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: bold;
     cursor: pointer;
+    transform: scale(1);
 }
 
-h3 {
-    font-size: 17px;
-}
 
 /*footer*/
 footer{
