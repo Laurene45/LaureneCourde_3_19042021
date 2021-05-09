@@ -1,5 +1,5 @@
-/* pages des menus restaurants */
-/* bouton previous*/
+/*pages des menus restaurants*/
+/*bouton previous*/
 
 header{
     position:relative;
@@ -18,6 +18,9 @@ header img{
     object-fit: cover;
     width: 100%;
 }
+
+/*aniamtion des menus*/
+
 
 /*détails des menus*/
 .menus{
@@ -138,7 +141,7 @@ h2 span {
 }
 
 
-/*coche verte */
+/*coche verte*/
 .box{
     display: flex;
     background-color: $tertiary-color;
