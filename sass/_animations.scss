@@ -1,0 +1,64 @@
+/*animation du spinner*/
+@keyframes load-spinner {
+    0% {
+      transform:rotate(0deg);
+    }
+    
+    100%{
+      transform:rotate(360deg);
+      
+    }
+}
+
+/*animation apparition spinner*/
+@keyframes loader {
+    0% {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
+        
+    }
+}
+
+/*animation disparition spinner- arrivée de la page suivante*/
+@keyframes after-load{
+    0%, 40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        
+    }
+}
+
+/*animation des coeurs*/
+@keyframes color{
+    0%{
+        opacity: 0; 
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/*animation des menus*/
+
+@keyframes delayapparition{
+    0%{
+        opacity: 0;
+        transform: translate(100%, 0);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+}

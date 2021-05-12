@@ -2,14 +2,6 @@
 body {
     margin: 0;
     font-family: "Roboto";
-    @include laptop{
-        max-width: 900px;
-        margin: auto;
-    }
-    @include laptop-xxl{
-        max-width: 900px;
-        margin: auto;
-    }
 }
 
 .logo{
@@ -33,6 +25,7 @@ h2 {
     padding-left: 10px;
     @include tablet {
         text-align:center;
+        padding-left: 0px;
     }
 }
 
@@ -45,7 +38,7 @@ h3, p {
 }
 
 p{
-    font-size:15px;
+    font-size:14px;
     padding-bottom: 30px;
     color: $dark-grey;
 }

@@ -8,9 +8,7 @@ header{
    @include previous;
 }
 
-.fas{
-    font-size: 16px;
-}
+
 
 /*image*/
 header img{
@@ -18,8 +16,6 @@ header img{
     object-fit: cover;
     width: 100%;
 }
-
-/*aniamtion des menus*/
 
 
 /*détails des menus*/
@@ -32,6 +28,7 @@ header img{
     border-radius: 35px 35px 0 0;
     position:relative;
 }
+
 
 .text__description h1{
     font-family: "Shrikhand";
@@ -49,10 +46,67 @@ h2 span {
 }
 
 .icon{
-    padding-top: 20px;
     position: relative;
+    padding-top:20px;
+}
+
+.menu__details{
+    @include laptop {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom: 20px;
+    }
 
 }
+/*apparition des menus */
+.choice__delay{
+    animation: delayapparition;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+.delay__0{
+    animation-delay:0s;
+}
+
+.delay__1{
+    animation-delay:0.5s;
+}
+
+.delay__2{
+    animation-delay:1s;
+}
+
+.delay__3{
+    animation-delay:1.5s;
+}
+
+.delay__4{
+    animation-delay:2s;
+}
+
+.delay__5{
+    animation-delay:2.5s;
+}
+
+.delay__6{
+    animation-delay:3s;
+}
+
+.delay__7{
+    animation-delay:3.5s;
+}
+
+.delay__8{
+    animation-delay:4s;
+}
+
+.delay__9{
+    animation-delay:4.5s;
+}
+
 
 /*entrées, plats et desserts*/
 .entrees, .plats, .desserts {
@@ -66,33 +120,20 @@ h2 span {
         margin-bottom: 15px;
         height: 80px;
     }
-    & h3{
-        font-size: 17px;
-        @include laptop {
-            font-size: 22px;
-        }
-        @include laptop-xxl{
-            font-size: 25px;
-        }
-    }
     & p{
         color:$black;
-        font-size: 15px;
         padding-bottom:0;
-        @include laptop {
-            font-size: 19px;
-        }
-        @include laptop-xxl{
-            font-size: 22px;
-    
-        }
+    }
+    @include laptop{
+        width:40%;
+
     }
 }
 
 /*check vert*/
 .choice{
     display: flex;
-    width: 93%;
+    width: 90%;
     border-radius: 10px;
     margin: auto;
     box-shadow: 0px 4px 5px 0px #cbcbcb;
@@ -102,34 +143,30 @@ h2 span {
 }
 
 .name{
-    width:100%;
     padding: 10px;
+    min-width: calc(100% - 45px); /*100% - prix*/
 }
 
-.choice:hover .name p {  /*voir David pour la largeur de la coche */
+.name:hover{  
+    min-width: calc(100% - 125px);  /*100% - prix + box */
+}
+
+.name:hover p, .name:hover h3{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: calc(100% - 40px);
 }
-
-.choice:hover .name h3 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: calc(100% - 40px);
-}
-
 
 .price {
     padding-top: 30px;
-    padding-right: 25px;
     font-weight: bold;
+    padding-right: 15px;
+    margin-left: -5px;
+
     & p{
         font-size:15px;
     }
 }
-
 
 
 .gradient{
@@ -145,13 +182,14 @@ h2 span {
 .box{
     display: flex;
     background-color: $tertiary-color;
-    width:0;
+    width:0px;
     transition: all 1s;
 }
 
 .choice:hover > .box{
-    width:120px;
+    min-width:70px;
 }
+
 
 .choice:hover > .box .check {
     transform: rotate(0deg);

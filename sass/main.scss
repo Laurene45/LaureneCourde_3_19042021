@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 @import "./variables";
+@import "./animations";
 @import "./mixins";
 @import "./base";
 @import "./menu";
@@ -11,29 +12,23 @@
     display:flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: $white;
-    @include laptop{
-        right:10px;
-    }
-    animation: container;
-    animation-duration: 3s;
+    opacity:0;
+    z-index: -1;
+    animation: loader;
+    animation-duration: 2s;
     transition-timing-function: ease-in-out;
     animation-fill-mode: both; 
 }
 
-@keyframes container {
-    0% {
-        opacity: 0;
-    }
-    70% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        display: none;
-    }
+.wrapper{
+    opacity: 0;
+    animation: after-load;
+    animation-duration: 2s;
+    transition-timing-function: ease-in-out;
+    animation-fill-mode: forwards; 
 }
 
 
@@ -45,23 +40,13 @@
     border-bottom: 12px solid $color-grey;
     width:60px;
     height:60px;
-    /*animation:spinner 3s ease-in-out both*/
+    /*animation:load-spinner 3s ease-in-out both*/
     animation: load-spinner;
     animation-duration: 3s;
     transition-timing-function: ease-in-out;
     animation-fill-mode: both;
-  }
+}
   
-  @keyframes load-spinner {
-    0% {
-      transform:rotate(0deg);
-    }
-    
-    100%{
-      transform:rotate(360deg);
-      
-    }
-  }
 
 /*header*/
 header {
@@ -82,10 +67,10 @@ header {
     font-size: 15px;
     width: 40px;
     @include tablet{
-        left: 33%;
+        left: 40%;
     }
     @include laptop{
-        left: 40%;
+        left: 42%;
     }
     @include laptop-xxl{
         left:45%;
@@ -102,7 +87,7 @@ input {
     text-align: center;
     height: 50px;
     width: 100%;
-    box-shadow: inset 0px 2px 3px 0px #d1d1d1;
+    box-shadow: inset 0px 2px 3px 0px $shadow;
     padding: 0;
     &::placeholder{
         color: $black;
@@ -120,12 +105,11 @@ input {
 
 /*bouton rose*/
 button{
-    @include button-rose;
-    &:hover{
-        background: linear-gradient($secondary-color, $primary-color);
-        opacity: 0.8;
-        transform:scale(1.05);
-    }
+    @include button;
+}
+
+button:hover{
+    @include hoverbutton;
 }
 
 /*fonctionnement*/
@@ -136,11 +120,12 @@ button{
     @include tablet {
         margin: 10px auto 30px auto;
         width: 80%;
+        align-items: center;
     }
     @include laptop{
         flex-direction: row;
-        justify-content: space-around;
-        width: 90%;
+        justify-content: space-evenly;
+        width: 100%;
         padding-bottom: 30px;
     }
     @include laptop-xxl{
@@ -150,18 +135,14 @@ button{
         display: flex;
         flex-direction: row;
         align-items: baseline;
-        justify-content: left;
         box-shadow: 2px 2px 5px 2px #dddddd;
-        margin: 20px;
+        margin: 15px;
         padding: 20px;
         background-color: $background;
         border-radius: 15px;
-        @include laptop {
-            width:25%;
-        }
         &:hover{
             background-color: #f2eafb;
-            box-shadow: 2px 4px 8px 0px #d1d1d1;
+            box-shadow: 2px 4px 8px 0px $shadow;
         }
         & p{
             font-weight: 600;
@@ -172,7 +153,17 @@ button{
             margin-right: 5%;
             color: #909090;
         }  
+        @include tablet{
+            width:40%;
+        }
+        @include laptop {
+            width:20%;
+        }
+        @include laptop-xxl{
+            width:22%;
+        }
     }
+
 }
 
 .numbers{
@@ -185,7 +176,7 @@ button{
 }
 
 .fas{
-    font-size: 16px;
+    font-size: 17px;
 }
 
 /*restaurants*/
@@ -223,7 +214,7 @@ button{
             width: 35%;
         }
         @include laptop-xxl{
-            width: 20%;
+            width: 22%;
         }   
     }
 }
@@ -255,19 +246,17 @@ button{
 }
 .far{
     height: 60px;
-    width: 50px;
+    width: 60px;
     font-size: 30px; 
 }
 
+/*coeur noir/blanc*/
 .heart--nb{
-    position:absolute;
-    opacity: 1;  
+    position: absolute;
+    -webkit-text-stroke: 1px $white;
 }
 
-.heart--nb:hover{
-    opacity:0;
-}
-
+/*coeur couleur*/
 .heart--color{
     opacity: 0;
 }
@@ -279,7 +268,11 @@ button{
     -webkit-text-fill-color: transparent;
     font-weight: bold;
     cursor: pointer;
-    transform: scale(1);
+    animation: color;
+    animation-duration: 1s;
+    animation-delay: 0.3s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
 }
 
 
@@ -290,11 +283,7 @@ footer{
     padding: 15px;
     & h2{
         font-family: "Shrikhand";
-        font-size: 16px;
         font-weight: 200;
-        @include laptop{
-            text-align:center;
-        }
     }
     & ul{
         list-style: none;
@@ -306,7 +295,7 @@ footer{
         & i {
             margin:0;
         }
-        @include laptop {
+        @include tablet {
             text-align: center;
         }
     }

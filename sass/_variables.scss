@@ -9,14 +9,15 @@ $white: white;
 $dark-grey: #7e7e7e;
 $black: black;
 $darkbackground: #353535;
+$shadow:#d1d1d1;
 
 
 /*breakpoints*/
 
 $breakpoints: (
-    tablet-min: 475px,
+    tablet-min: 768px,
     laptop-min: 1024px,
-    laptop-xxl: 2560px,
+    laptop-xxl: 1444px,
 );
 
 

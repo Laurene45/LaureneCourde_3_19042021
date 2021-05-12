@@ -2,6 +2,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
 /*colors*/
 /*breakpoints*/
+/*animation du spinner*/
+@keyframes load-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*animation apparition spinner*/
+@keyframes loader {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/*animation disparition spinner- arrivée de la page suivante*/
+@keyframes after-load {
+  0%, 40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*animation des coeurs*/
+@keyframes color {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*animation des menus*/
+@keyframes delayapparition {
+  0% {
+    opacity: 0;
+    transform: translate(100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
 /* les liens a */
 /* bouton previous*/
 /*bouton rose */
@@ -12,18 +61,6 @@
 body {
   margin: 0;
   font-family: "Roboto";
-}
-@media screen and (min-width: 1024px) {
-  body {
-    max-width: 900px;
-    margin: auto;
-  }
-}
-@media screen and (min-width: 2560px) {
-  body {
-    max-width: 900px;
-    margin: auto;
-  }
 }
 
 .logo {
@@ -48,9 +85,10 @@ h1 {
 h2 {
   padding-left: 10px;
 }
-@media screen and (min-width: 475px) {
+@media screen and (min-width: 768px) {
   h2 {
     text-align: center;
+    padding-left: 0px;
   }
 }
 
@@ -63,7 +101,7 @@ h3, p {
 }
 
 p {
-  font-size: 15px;
+  font-size: 14px;
   padding-bottom: 30px;
   color: #7e7e7e;
 }
@@ -83,10 +121,6 @@ header {
   cursor: pointer;
 }
 
-.fas {
-  font-size: 16px;
-}
-
 /*image*/
 header img {
   height: 235px;
@@ -94,7 +128,6 @@ header img {
   width: 100%;
 }
 
-/*aniamtion des menus*/
 /*détails des menus*/
 .menus {
   width: 100%;
@@ -122,8 +155,65 @@ h2 span {
 }
 
 .icon {
-  padding-top: 20px;
   position: relative;
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .menu__details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+  }
+}
+
+/*apparition des menus */
+.choice__delay {
+  animation: delayapparition;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+.delay__0 {
+  animation-delay: 0s;
+}
+
+.delay__1 {
+  animation-delay: 0.5s;
+}
+
+.delay__2 {
+  animation-delay: 1s;
+}
+
+.delay__3 {
+  animation-delay: 1.5s;
+}
+
+.delay__4 {
+  animation-delay: 2s;
+}
+
+.delay__5 {
+  animation-delay: 2.5s;
+}
+
+.delay__6 {
+  animation-delay: 3s;
+}
+
+.delay__7 {
+  animation-delay: 3.5s;
+}
+
+.delay__8 {
+  animation-delay: 4s;
+}
+
+.delay__9 {
+  animation-delay: 4.5s;
 }
 
 /*entrées, plats et desserts*/
@@ -139,39 +229,20 @@ h2 span {
   margin-bottom: 15px;
   height: 80px;
 }
-.entrees h3, .plats h3, .desserts h3 {
-  font-size: 17px;
-}
-@media screen and (min-width: 1024px) {
-  .entrees h3, .plats h3, .desserts h3 {
-    font-size: 22px;
-  }
-}
-@media screen and (min-width: 2560px) {
-  .entrees h3, .plats h3, .desserts h3 {
-    font-size: 25px;
-  }
-}
 .entrees p, .plats p, .desserts p {
   color: black;
-  font-size: 15px;
   padding-bottom: 0;
 }
 @media screen and (min-width: 1024px) {
-  .entrees p, .plats p, .desserts p {
-    font-size: 19px;
-  }
-}
-@media screen and (min-width: 2560px) {
-  .entrees p, .plats p, .desserts p {
-    font-size: 22px;
+  .entrees, .plats, .desserts {
+    width: 40%;
   }
 }
 
 /*check vert*/
 .choice {
   display: flex;
-  width: 93%;
+  width: 90%;
   border-radius: 10px;
   margin: auto;
   box-shadow: 0px 4px 5px 0px #cbcbcb;
@@ -181,29 +252,27 @@ h2 span {
 }
 
 .name {
-  width: 100%;
   padding: 10px;
+  min-width: calc(100% - 45px);
+  /*100% - prix*/
 }
 
-.choice:hover .name p {
-  /*voir David pour la largeur de la coche */
+.name:hover {
+  min-width: calc(100% - 125px);
+  /*100% - prix + box */
+}
+
+.name:hover p, .name:hover h3 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: calc(100% - 40px);
-}
-
-.choice:hover .name h3 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: calc(100% - 40px);
 }
 
 .price {
   padding-top: 30px;
-  padding-right: 25px;
   font-weight: bold;
+  padding-right: 15px;
+  margin-left: -5px;
 }
 .price p {
   font-size: 15px;
@@ -223,12 +292,12 @@ h2 span {
 .box {
   display: flex;
   background-color: #99e2d0;
-  width: 0;
+  width: 0px;
   transition: all 1s;
 }
 
 .choice:hover > .box {
-  width: 120px;
+  min-width: 70px;
 }
 
 .choice:hover > .box .check {
@@ -252,32 +321,25 @@ h2 span {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: white;
-  animation: container;
-  animation-duration: 3s;
+  opacity: 0;
+  z-index: -1;
+  animation: loader;
+  animation-duration: 2s;
   transition-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
-@media screen and (min-width: 1024px) {
-  .container {
-    right: 10px;
-  }
+
+.wrapper {
+  opacity: 0;
+  animation: after-load;
+  animation-duration: 2s;
+  transition-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
-@keyframes container {
-  0% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
 .load {
   border-radius: 50%;
   border-top: 12px solid #ff79da;
@@ -286,21 +348,13 @@ h2 span {
   border-bottom: 12px solid #eaeaea;
   width: 60px;
   height: 60px;
-  /*animation:spinner 3s ease-in-out both*/
+  /*animation:load-spinner 3s ease-in-out both*/
   animation: load-spinner;
   animation-duration: 3s;
   transition-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
 
-@keyframes load-spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 /*header*/
 header {
   display: flex;
@@ -320,17 +374,17 @@ header {
   font-size: 15px;
   width: 40px;
 }
-@media screen and (min-width: 475px) {
-  .map {
-    left: 33%;
-  }
-}
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .map {
     left: 40%;
   }
 }
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 1024px) {
+  .map {
+    left: 42%;
+  }
+}
+@media screen and (min-width: 1444px) {
   .map {
     left: 45%;
   }
@@ -373,10 +427,12 @@ button {
   box-shadow: 0px 3px 4px 2px #d1d1d1;
   cursor: pointer;
 }
+
 button:hover {
-  background: linear-gradient(#ff79da, #9356dc);
-  opacity: 0.8;
-  transform: scale(1.05);
+  background: linear-gradient(rgba(255, 121, 218, 0.8), rgba(147, 86, 220, 0.8));
+  /*éclaircissement couleur*/
+  box-shadow: 0px 3px 4px 2px #9e9e9e;
+  /* durcissement ombre*/
 }
 
 /*fonctionnement*/
@@ -385,21 +441,22 @@ button:hover {
   flex-direction: column;
   padding-bottom: 50px;
 }
-@media screen and (min-width: 475px) {
+@media screen and (min-width: 768px) {
   .steps {
     margin: 10px auto 30px auto;
     width: 80%;
+    align-items: center;
   }
 }
 @media screen and (min-width: 1024px) {
   .steps {
     flex-direction: row;
-    justify-content: space-around;
-    width: 90%;
+    justify-content: space-evenly;
+    width: 100%;
     padding-bottom: 30px;
   }
 }
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 1444px) {
   .steps {
     width: 70%;
   }
@@ -408,17 +465,11 @@ button:hover {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  justify-content: left;
   box-shadow: 2px 2px 5px 2px #dddddd;
-  margin: 20px;
+  margin: 15px;
   padding: 20px;
   background-color: #f6f6f6;
   border-radius: 15px;
-}
-@media screen and (min-width: 1024px) {
-  .steps__flex {
-    width: 25%;
-  }
 }
 .steps__flex:hover {
   background-color: #f2eafb;
@@ -433,6 +484,21 @@ button:hover {
   margin-right: 5%;
   color: #909090;
 }
+@media screen and (min-width: 768px) {
+  .steps__flex {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .steps__flex {
+    width: 20%;
+  }
+}
+@media screen and (min-width: 1444px) {
+  .steps__flex {
+    width: 22%;
+  }
+}
 
 .numbers {
   margin-right: 20px;
@@ -444,7 +510,7 @@ button:hover {
 }
 
 .fas {
-  font-size: 16px;
+  font-size: 17px;
 }
 
 /*restaurants*/
@@ -478,7 +544,7 @@ button:hover {
   object-fit: cover;
   position: relative;
 }
-@media screen and (min-width: 475px) {
+@media screen and (min-width: 768px) {
   .restaurants__photos {
     margin: 10px auto 30px auto;
     width: 80%;
@@ -489,9 +555,9 @@ button:hover {
     width: 35%;
   }
 }
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 1444px) {
   .restaurants__photos {
-    width: 20%;
+    width: 22%;
   }
 }
 
@@ -528,19 +594,17 @@ button:hover {
 
 .far {
   height: 60px;
-  width: 50px;
+  width: 60px;
   font-size: 30px;
 }
 
+/*coeur noir/blanc*/
 .heart--nb {
   position: absolute;
-  opacity: 1;
+  -webkit-text-stroke: 1px white;
 }
 
-.heart--nb:hover {
-  opacity: 0;
-}
-
+/*coeur couleur*/
 .heart--color {
   opacity: 0;
 }
@@ -552,7 +616,11 @@ button:hover {
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   cursor: pointer;
-  transform: scale(1);
+  animation: color;
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
 }
 
 /*footer*/
@@ -563,13 +631,7 @@ footer {
 }
 footer h2 {
   font-family: "Shrikhand";
-  font-size: 16px;
   font-weight: 200;
-}
-@media screen and (min-width: 1024px) {
-  footer h2 {
-    text-align: center;
-  }
 }
 footer ul {
   list-style: none;
@@ -582,7 +644,7 @@ footer li {
 footer li i {
   margin: 0;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   footer li {
     text-align: center;
   }
