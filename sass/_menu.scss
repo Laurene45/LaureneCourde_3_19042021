@@ -63,7 +63,7 @@ h2 span {
 .choice__delay{
     animation: delayapparition;
     animation-duration: 0.6s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
     animation-fill-mode: both;
 }
 
@@ -87,25 +87,6 @@ h2 span {
     animation-delay:2s;
 }
 
-.delay__5{
-    animation-delay:2.5s;
-}
-
-.delay__6{
-    animation-delay:3s;
-}
-
-.delay__7{
-    animation-delay:3.5s;
-}
-
-.delay__8{
-    animation-delay:4s;
-}
-
-.delay__9{
-    animation-delay:4.5s;
-}
 
 
 /*entrées, plats et desserts*/
