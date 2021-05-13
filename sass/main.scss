@@ -72,9 +72,12 @@ header {
     @include laptop{
         left: 42%;
     }
-    @include laptop-xxl{
-        left:45%;
-    }   
+    @include laptop-l{
+        left:44%;
+    }
+    @include laptop-xl{
+        left:46%;
+    }
     & i {
         font-size: 16px;
         color: #000000;
@@ -128,7 +131,7 @@ button:hover{
         width: 100%;
         padding-bottom: 30px;
     }
-    @include laptop-xxl{
+    @include laptop-l{
         width: 70%;
     }   
     &__flex{
@@ -159,8 +162,11 @@ button:hover{
         @include laptop {
             width:20%;
         }
-        @include laptop-xxl{
-            width:22%;
+        @include laptop-l{
+            width:20%;
+        }
+        @include laptop-xl{
+            width:15%;
         }
     }
 
@@ -213,9 +219,10 @@ button:hover{
         @include laptop{
             width: 35%;
         }
-        @include laptop-xxl{
-            width: 22%;
-        }   
+        @include laptop-xl{
+            width: 20%;
+        }
+        
     }
 }
 

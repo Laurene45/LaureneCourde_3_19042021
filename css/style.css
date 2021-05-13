@@ -220,6 +220,11 @@ h2 span {
 .entrees, .plats, .desserts {
   padding-bottom: 15px;
 }
+@media screen and (min-width: 768px) {
+  .entrees, .plats, .desserts {
+    margin-left: 15px;
+  }
+}
 .entrees__titre, .plats__titre, .desserts__titre {
   color: #7e7e7e;
   font-size: 16px;
@@ -235,7 +240,7 @@ h2 span {
 }
 @media screen and (min-width: 1024px) {
   .entrees, .plats, .desserts {
-    width: 40%;
+    width: 35%;
   }
 }
 
@@ -249,6 +254,11 @@ h2 span {
   cursor: pointer;
   /*cache  le check qui dépasse */
   overflow: hidden;
+}
+@media screen and (min-width: 2050px) {
+  .choice {
+    width: 75%;
+  }
 }
 
 .name {
@@ -386,7 +396,12 @@ header {
 }
 @media screen and (min-width: 1444px) {
   .map {
-    left: 45%;
+    left: 44%;
+  }
+}
+@media screen and (min-width: 2050px) {
+  .map {
+    left: 46%;
   }
 }
 .map i {
@@ -496,7 +511,12 @@ button:hover {
 }
 @media screen and (min-width: 1444px) {
   .steps__flex {
-    width: 22%;
+    width: 20%;
+  }
+}
+@media screen and (min-width: 2050px) {
+  .steps__flex {
+    width: 15%;
   }
 }
 
@@ -555,9 +575,9 @@ button:hover {
     width: 35%;
   }
 }
-@media screen and (min-width: 1444px) {
+@media screen and (min-width: 2050px) {
   .restaurants__photos {
-    width: 22%;
+    width: 20%;
   }
 }
 

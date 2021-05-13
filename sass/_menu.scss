@@ -111,6 +111,9 @@ h2 span {
 /*entrées, plats et desserts*/
 .entrees, .plats, .desserts {
     padding-bottom: 15px;
+    @include tablet{
+        margin-left: 15px;
+    }
     &__titre{
         color: $dark-grey;
         font-size: 16px;
@@ -125,7 +128,7 @@ h2 span {
         padding-bottom:0;
     }
     @include laptop{
-        width:40%;
+        width:35%;
 
     }
 }
@@ -140,6 +143,9 @@ h2 span {
     cursor: pointer;
     /*cache  le check qui dépasse */
     overflow: hidden;
+    @include laptop-xl{
+        width: 75%;
+    }
 }
 
 .name{

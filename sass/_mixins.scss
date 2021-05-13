@@ -60,8 +60,14 @@
 } 
 
 
-@mixin laptop-xxl {
-  @media screen and (min-width: map-get($breakpoints, laptop-xxl)){
+@mixin laptop-l {
+  @media screen and (min-width: map-get($breakpoints, laptop-l-min)){
+     @content;
+   }
+} 
+
+@mixin laptop-xl {
+  @media screen and (min-width: map-get($breakpoints, laptop-xl-min)){
      @content;
    }
 } 
