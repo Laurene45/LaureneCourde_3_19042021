@@ -245,7 +245,7 @@ h2 span {
 }
 
 .choice:hover > .name {
-  min-width: calc(58px + 41px + 70px);
+  min-width: calc(58px + 41px + 60px);
   /*total = name + prix + box*/
 }
 
@@ -259,10 +259,14 @@ h2 span {
 .name {
   padding: 10px;
   flex-grow: 1;
+  overflow: hidden;
+  /*texte en ... */
+  text-overflow: ellipsis;
+  white-space: nowrap;
   /*min-width:calc(100% - 60px);  /*100% - prix*/
 }
 
-/*.name:hover{  
+/*.name:hover {  
    /*min-width:calc(100% - 125px);   /*100% - (prix + box)
 }*/
 .price {
@@ -295,7 +299,7 @@ h2 span {
 }
 
 .choice:hover > .box {
-  min-width: 70px;
+  min-width: 60px;
   /*définit la taille de l'apparition box*/
   animation: box-appearance;
   /* animation: box-appearance;*/

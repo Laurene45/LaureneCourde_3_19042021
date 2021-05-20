@@ -3,10 +3,9 @@
 .container, .menus{
     max-width: 1200px;
     margin: auto;
-
 }
-/*bouton previous*/
 
+/*bouton previous*/
 header{
     position:relative;
 }
@@ -14,14 +13,12 @@ header{
    @include previous;
 }
 
-
 /*image*/
 header img{
     height: 235px;
     object-fit: cover;
     width: 100%;
 }
-
 
 /*détails des menus*/
 .menus{
@@ -33,7 +30,6 @@ header img{
     border-radius: 35px 35px 0 0;
     position:relative;
 }
-
 
 .text__description h1{
     font-family: "Shrikhand";
@@ -58,8 +54,8 @@ h2 span {
 .menu__details{
     margin: auto;
     max-width: 900px;
-
 }
+
 /*apparition des menus */
 .choice__delay{
     animation: delayapparition;
@@ -88,8 +84,6 @@ h2 span {
     animation-delay:2s;
 }
 
-
-
 /*entrées, plats et desserts*/
 .entrees, .plats, .desserts {
     padding-bottom: 15px;
@@ -109,7 +103,6 @@ h2 span {
         color:$black;
         padding-bottom:0;
     }
-
 }
 
 /*check vert avec la fonction calc*/
@@ -126,7 +119,7 @@ h2 span {
 }
 
 .choice:hover >.name {
-    min-width: calc(58px + 41px + 70px); /*total = name + prix + box*/
+    min-width: calc(58px + 41px + 60px); /*total = name + prix + box*/
 }
 
 .choice p, .choice h3{
@@ -138,10 +131,13 @@ h2 span {
 .name{
     padding: 10px;
     flex-grow: 1;
+    overflow: hidden;  /*texte en ... */
+    text-overflow: ellipsis;
+    white-space: nowrap;
     /*min-width:calc(100% - 60px);  /*100% - prix*/
 }
 
-/*.name:hover{  
+/*.name:hover {  
    /*min-width:calc(100% - 125px);   /*100% - (prix + box)
 }*/
 
@@ -164,7 +160,6 @@ h2 span {
     }
 }
 
-
 /*coche verte*/
 .box{
     display: flex;
@@ -174,7 +169,7 @@ h2 span {
 }
 
 .choice:hover > .box{
-    min-width:70px;  /*définit la taille de l'apparition box*/
+    min-width:60px;  /*définit la taille de l'apparition box*/
     animation:box-appearance; /* animation: box-appearance;*/
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -194,6 +189,5 @@ h2 span {
 .box .check .fa-check-circle{
     color: $white;
     font-size: 25px;
-
 }
 
