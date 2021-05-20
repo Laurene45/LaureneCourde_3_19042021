@@ -53,12 +53,28 @@
 @keyframes delayapparition{
     0%{
         opacity: 0;
-        /*transform: translate(100%, 0);*/ /* animation de droite à gauche*/
+        
     }
 
     100%{
         opacity: 1;
-        /*transform: translate(0, 0);*/
+        
+    }
+
+}
+
+
+
+
+@keyframes box-appearance{
+    0%{
+        opacity: 0;
+        transform: translate(100%, 0%); /* animation de droite à gauche*/
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0%, 0%);
     }
 
 }

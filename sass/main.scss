@@ -7,7 +7,7 @@
 @import "./menu";
 
 /*loader*/
-.container{
+.loader{
     position: fixed;
     display:flex;
     justify-content: space-around;
@@ -32,7 +32,7 @@
 }
 
 
-.load{
+.loadspinner{
     border-radius:50%;
     border-top: 12px solid $secondary-color;
     border-left: 12px solid $primary-color;
@@ -115,6 +115,11 @@ button:hover{
     @include hoverbutton;
 }
 
+/*section */
+.steps, .restaurants__flex{
+    max-width: 1200px;
+    margin:auto;
+}
 /*fonctionnement*/
 .steps{
     display: flex;
@@ -128,12 +133,8 @@ button:hover{
     @include laptop{
         flex-direction: row;
         justify-content: space-evenly;
-        width: 100%;
         padding-bottom: 30px;
-    }
-    @include laptop-l{
-        width: 70%;
-    }   
+    }  
     &__flex{
         display: flex;
         flex-direction: row;
@@ -160,14 +161,12 @@ button:hover{
             width:40%;
         }
         @include laptop {
-            width:20%;
+            width:30%;
         }
         @include laptop-l{
             width:20%;
         }
-        @include laptop-xl{
-            width:15%;
-        }
+        
     }
 
 }
@@ -220,7 +219,7 @@ button:hover{
             width: 35%;
         }
         @include laptop-xl{
-            width: 20%;
+            width: 37%;
         }
         
     }

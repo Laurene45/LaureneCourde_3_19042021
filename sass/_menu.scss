@@ -1,4 +1,10 @@
 /*pages des menus restaurants*/
+/*structure page menu*/
+.container, .menus{
+    max-width: 1200px;
+    margin: auto;
+
+}
 /*bouton previous*/
 
 header{
@@ -7,7 +13,6 @@ header{
 .return{
    @include previous;
 }
-
 
 
 /*image*/
@@ -51,12 +56,8 @@ h2 span {
 }
 
 .menu__details{
-    @include laptop {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        margin-bottom: 20px;
-    }
+    margin: auto;
+    max-width: 900px;
 
 }
 /*apparition des menus */
@@ -108,53 +109,52 @@ h2 span {
         color:$black;
         padding-bottom:0;
     }
-    @include laptop{
-        width:35%;
 
-    }
 }
 
-/*check vert*/
+/*check vert avec la fonction calc*/
 .choice{
     display: flex;
+    flex-direction: row;
     width: 90%;
     border-radius: 10px;
     margin: auto;
     box-shadow: 0px 4px 5px 0px #cbcbcb;
     cursor: pointer;
-    /*cache  le check qui dépasse */
-    overflow: hidden;
-    @include laptop-xl{
-        width: 75%;
-    }
+    overflow: hidden; /*cache  le check qui dépasse*/
+    /*min-width: calc(254px + 45px); /*total = name + prix*/
 }
 
-.name{
-    padding: 10px;
-    min-width: calc(100% - 45px); /*100% - prix*/
+.choice:hover >.name {
+    min-width: calc(58px + 41px + 70px); /*total = name + prix + box*/
 }
 
-.name:hover{  
-    min-width: calc(100% - 125px);  /*100% - prix + box */
-}
-
-.name:hover p, .name:hover h3{
-    overflow: hidden;
+.choice p, .choice h3{
+    overflow: hidden;  /*texte en ... */
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.price {
-    padding-top: 30px;
-    font-weight: bold;
-    padding-right: 15px;
-    margin-left: -5px;
-
-    & p{
-        font-size:15px;
-    }
+.name{
+    padding: 10px;
+    flex-grow: 1;
+    /*min-width:calc(100% - 60px);  /*100% - prix*/
 }
 
+/*.name:hover{  
+   /*min-width:calc(100% - 125px);   /*100% - (prix + box)
+}*/
+
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px;
+    & p{
+        font-size:14px;
+    }
+}
 
 .gradient{
     display: flex;
@@ -169,14 +169,17 @@ h2 span {
 .box{
     display: flex;
     background-color: $tertiary-color;
-    width:0px;
+    width:0;
     transition: all 1s;
 }
 
 .choice:hover > .box{
-    min-width:70px;
+    min-width:70px;  /*définit la taille de l'apparition box*/
+    animation:box-appearance; /* animation: box-appearance;*/
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
-
 
 .choice:hover > .box .check {
     transform: rotate(0deg);
@@ -184,8 +187,8 @@ h2 span {
 
 .box .check{
     margin: auto;
-    transition: transform 0.7s;
-    transform: rotate(360deg);
+    transition: transform 1s;
+    transform: rotate(180deg);
 }
 
 .box .check .fa-check-circle{
@@ -193,3 +196,4 @@ h2 span {
     font-size: 25px;
 
 }
+
