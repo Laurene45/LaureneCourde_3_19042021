@@ -31,7 +31,6 @@
     animation-fill-mode: forwards; 
 }
 
-
 .loadspinner{
     border-radius:50%;
     border-top: 12px solid $secondary-color;
@@ -47,7 +46,6 @@
     animation-fill-mode: both;
 }
   
-
 /*header*/
 header {
     display: flex;
@@ -120,6 +118,7 @@ button:hover{
     max-width: 1200px;
     margin:auto;
 }
+
 /*fonctionnement*/
 .steps{
     display: flex;
@@ -166,9 +165,7 @@ button:hover{
         @include laptop-l{
             width:20%;
         }
-        
     }
-
 }
 
 .numbers{
@@ -221,7 +218,6 @@ button:hover{
         @include laptop-xl{
             width: 37%;
         }
-        
     }
 }
 
@@ -231,7 +227,6 @@ button:hover{
         @include cards-span;
     }
 }
-
 
 .text{
     padding-top: 5px;
@@ -250,6 +245,7 @@ button:hover{
 .iconheart{
     position:relative;
 }
+
 .far{
     height: 60px;
     width: 60px;
@@ -280,7 +276,6 @@ button:hover{
     animation-timing-function: linear;
     animation-fill-mode: both;
 }
-
 
 /*footer*/
 footer{
