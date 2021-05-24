@@ -49,15 +49,13 @@
     opacity: 1;
   }
 }
+/*animation check box*/
 @keyframes box-appearance {
   0% {
-    opacity: 0;
-    transform: translate(100%, 0%);
-    /* animation de droite à gauche*/
+    transform: translateX(60px);
   }
   100% {
-    opacity: 1;
-    transform: translate(0%, 0%);
+    transform: translateX(0px);
   }
 }
 /* les liens a */
@@ -118,7 +116,7 @@ p {
 /*pages des menus restaurants*/
 /*structure page menu*/
 .container, .menus {
-  max-width: 1200px;
+  max-width: 950px;
   margin: auto;
 }
 
@@ -240,13 +238,12 @@ h2 span {
   box-shadow: 0px 4px 5px 0px #cbcbcb;
   cursor: pointer;
   overflow: hidden;
-  /*cache  le check qui dépasse*/
-  /*min-width: calc(254px + 45px); /*total = name + prix*/
+  /*cache le check qui dépasse*/
 }
 
 .choice:hover > .name {
-  min-width: calc(58px + 41px + 60px);
-  /*total = name + prix + box*/
+  min-width: calc(100% - 120px);
+  /*total = calc(100% - (prix + box))*/
 }
 
 .choice p, .choice h3 {
@@ -263,12 +260,8 @@ h2 span {
   /*texte en ... */
   text-overflow: ellipsis;
   white-space: nowrap;
-  /*min-width:calc(100% - 60px);  /*100% - prix*/
 }
 
-/*.name:hover {  
-   /*min-width:calc(100% - 125px);   /*100% - (prix + box)
-}*/
 .price {
   display: flex;
   justify-content: center;
@@ -276,7 +269,7 @@ h2 span {
   font-weight: bold;
   padding: 10px;
 }
-.price p {
+.price span {
   font-size: 14px;
 }
 
@@ -297,30 +290,34 @@ h2 span {
   width: 0;
   transition: all 1s;
 }
+.box .check {
+  margin: auto;
+  transition: transform 1s;
+  transform: rotate(0deg);
+}
+.box .check .fa-check-circle {
+  color: white;
+  font-size: 25px;
+}
 
-.choice:hover > .box {
+.choice:hover .box {
   min-width: 60px;
   /*définit la taille de l'apparition box*/
   animation: box-appearance;
   /* animation: box-appearance;*/
-  animation-duration: 1s;
+  animation-duration: 500ms;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
-
-.choice:hover > .box .check {
-  transform: rotate(0deg);
+.choice:hover .price {
+  animation: box-appearance;
+  /* animation: box-appearance;*/
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
-
-.box .check {
-  margin: auto;
-  transition: transform 1s;
-  transform: rotate(180deg);
-}
-
-.box .check .fa-check-circle {
-  color: white;
-  font-size: 25px;
+.choice:hover .check {
+  transform: rotate(360deg);
 }
 
 /*loader*/

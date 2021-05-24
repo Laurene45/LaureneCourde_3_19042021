@@ -1,7 +1,7 @@
 /*pages des menus restaurants*/
 /*structure page menu*/
 .container, .menus{
-    max-width: 1200px;
+    max-width: 950px;
     margin: auto;
 }
 
@@ -9,7 +9,6 @@
 header{
     position:relative;
 }
-
 .return{
    @include previous;
 }
@@ -115,12 +114,12 @@ h2 span {
     margin: auto;
     box-shadow: 0px 4px 5px 0px #cbcbcb;
     cursor: pointer;
-    overflow: hidden; /*cache  le check qui dépasse*/
-    /*min-width: calc(254px + 45px); /*total = name + prix*/
+    overflow: hidden; /*cache le check qui dépasse*/
+
 }
 
 .choice:hover >.name {
-    min-width: calc(58px + 41px + 60px); /*total = name + prix + box*/
+    min-width: calc(100% - 120px); /*total = calc(100% - (prix + box))*/
 }
 
 .choice p, .choice h3{
@@ -135,12 +134,7 @@ h2 span {
     overflow: hidden;  /*texte en ... */
     text-overflow: ellipsis;
     white-space: nowrap;
-    /*min-width:calc(100% - 60px);  /*100% - prix*/
 }
-
-/*.name:hover {  
-   /*min-width:calc(100% - 125px);   /*100% - (prix + box)
-}*/
 
 .price{
     display: flex;
@@ -148,7 +142,7 @@ h2 span {
     align-items: center;
     font-weight: bold;
     padding: 10px;
-    & p{
+    & span{
         font-size:14px;
     }
 }
@@ -167,28 +161,33 @@ h2 span {
     background-color: $tertiary-color;
     width:0;
     transition: all 1s;
+    & .check{
+        margin: auto;
+        transition: transform 1s;
+        transform: rotate(0deg);
+        & .fa-check-circle{
+            color: $white;
+            font-size: 25px;
+        }
+    } 
 }
 
-.choice:hover > .box{
-    min-width:60px;  /*définit la taille de l'apparition box*/
-    animation:box-appearance; /* animation: box-appearance;*/
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-}
-
-.choice:hover > .box .check {
-    transform: rotate(0deg);
-}
-
-.box .check{
-    margin: auto;
-    transition: transform 1s;
-    transform: rotate(180deg);
-}
-
-.box .check .fa-check-circle{
-    color: $white;
-    font-size: 25px;
+.choice:hover{
+    & .box{
+        min-width:60px;  /*définit la taille de l'apparition box*/
+        animation:box-appearance; /* animation: box-appearance;*/
+        animation-duration: 500ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+    & .price{
+        animation:box-appearance; /* animation: box-appearance;*/
+        animation-duration: 500ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+    & .check{
+        transform: rotate(360deg);
+    }
 }
 

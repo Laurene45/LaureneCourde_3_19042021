@@ -6,6 +6,7 @@
     
     100%{
       transform:rotate(360deg);
+      
     }
 }
 
@@ -19,6 +20,7 @@
     100% {
         opacity: 0;
         z-index: -1;
+        
     }
 }
 
@@ -30,6 +32,7 @@
 
     100% {
         opacity: 1;
+        
     }
 }
 
@@ -49,25 +52,23 @@
 @keyframes delayapparition{
     0%{
         opacity: 0;
+        
     }
 
     100%{
         opacity: 1;
+        
     }
-
 }
 
 
-
-
+/*animation check box*/
 @keyframes box-appearance{
     0%{
-        opacity: 0;
-        transform: translate(100%, 0%); /* animation de droite à gauche*/
+        transform: translateX(60px);
     }
 
     100%{
-        opacity: 1;
-        transform: translate(0%, 0%);
+        transform: translateX(0px);
     }
 }
