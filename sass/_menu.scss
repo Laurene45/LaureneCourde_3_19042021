@@ -175,7 +175,7 @@ h2 span {
 .choice:hover{
     & .box{
         min-width:60px;  /*définit la taille de l'apparition box*/
-        animation:box-appearance; /* animation: box-appearance;*/
+        animation:box-appearance; /*animation: box-appearance;*/
         animation-duration: 500ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
