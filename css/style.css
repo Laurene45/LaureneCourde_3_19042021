@@ -341,7 +341,7 @@ h2 span {
   opacity: 0;
   animation: after-load;
   animation-duration: 2s;
-  transition-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 
@@ -356,7 +356,7 @@ h2 span {
   /*animation:load-spinner 3s ease-in-out both*/
   animation: load-spinner;
   animation-duration: 3s;
-  transition-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
 
