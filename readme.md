@@ -21,7 +21,7 @@ Develop a website offering the menu of 4 major Parisian restaurants and allow on
 ## Setup
 
  - Get the code
-<pre> git clone https://github.com/Laurene45/LaureneCourde_2_24032021.git</pre>
+<pre> git clone https://github.com/Laurene45/LaureneCourde_3_19042021.git</pre>
 
  - Install required dependencies
 <pre>npm install</pre>
